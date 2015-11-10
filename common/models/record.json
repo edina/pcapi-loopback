@@ -1,0 +1,23 @@
+{
+  "name": "Record",
+  "plural": "records",
+  "base": "GeoJSONFeature",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "properties": {
+      "type": "RecordProperties",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

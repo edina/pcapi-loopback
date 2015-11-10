@@ -1,0 +1,27 @@
+{
+  "name": "RecordProperties",
+  "base": "Model",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": null,
+    "editor": {
+      "type": "string",
+      "required": true
+    },
+    "fields": {
+      "type": "array",
+      "required": true
+    },
+    "timestamp": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

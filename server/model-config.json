@@ -39,5 +39,13 @@
   "GeoJSONGeometry": {
     "dataSource": null,
     "public": false
+  },
+  "Record": {
+    "dataSource": "db",
+    "public": true
+  },
+  "RecordProperties": {
+    "dataSource": "db",
+    "public": false
   }
 }
