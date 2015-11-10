@@ -31,5 +31,13 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "GeoJSONFeature": {
+    "dataSource": null,
+    "public": false
+  },
+  "GeoJSONGeometry": {
+    "dataSource": null,
+    "public": false
   }
 }
