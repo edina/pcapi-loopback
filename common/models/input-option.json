@@ -1,0 +1,20 @@
+{
+  "name": "InputOption",
+  "base": "Input",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "options": {
+      "type": [
+        "KeyValue"
+      ],
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -47,5 +47,49 @@
   "RecordProperties": {
     "dataSource": "db",
     "public": false
+  },
+  "Editor": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Input": {
+    "dataSource": "db",
+    "public": false
+  },
+  "InputText": {
+    "dataSource": "db",
+    "public": false
+  },
+  "InputRange": {
+    "dataSource": "db",
+    "public": false
+  },
+  "InputTextArea": {
+    "dataSource": "db",
+    "public": false
+  },
+  "KeyValue": {
+    "dataSource": "db",
+    "public": false
+  },
+  "InputCheck": {
+    "dataSource": "db",
+    "public": false
+  },
+  "InputRadio": {
+    "dataSource": "db",
+    "public": false
+  },
+  "InputOption": {
+    "dataSource": "db",
+    "public": false
+  },
+  "InputImage": {
+    "dataSource": "db",
+    "public": false
+  },
+  "InputAudio": {
+    "dataSource": "db",
+    "public": false
   }
 }

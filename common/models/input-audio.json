@@ -1,0 +1,14 @@
+{
+  "name": "InputAudio",
+  "base": "Input",
+  "strict": true,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

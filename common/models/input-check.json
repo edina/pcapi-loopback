@@ -1,18 +1,16 @@
 {
-  "name": "GeoJSONGeometry",
-  "base": "Model",
+  "name": "InputCheck",
+  "base": "Input",
+  "strict": true,
   "idInjection": false,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "id": false,
-    "type": {
-      "type": "string",
-      "required": true
-    },
-    "coordinates": {
-      "type": "array",
+    "checks": {
+      "type": [
+        "KeyValue"
+      ],
       "required": true
     }
   },

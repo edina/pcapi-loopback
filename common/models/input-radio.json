@@ -1,18 +1,16 @@
 {
-  "name": "GeoJSONGeometry",
-  "base": "Model",
+  "name": "InputRadio",
+  "base": "Input",
+  "strict": true,
   "idInjection": false,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "id": false,
-    "type": {
-      "type": "string",
-      "required": true
-    },
-    "coordinates": {
-      "type": "array",
+    "radios": {
+      "type": [
+        "KeyValue"
+      ],
       "required": true
     }
   },

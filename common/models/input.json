@@ -1,23 +1,19 @@
 {
-  "name": "RecordProperties",
+  "name": "Input",
   "base": "Model",
+  "strict": true,
   "idInjection": false,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "id": false,
-    "editor": {
+    "label": {
       "type": "string",
       "required": true
     },
-    "fields": {
-      "type": "array",
-      "required": true
-    },
-    "timestamp": {
-      "type": "string",
-      "required": true
+    "required": {
+      "type": "boolean",
+      "default": true
     }
   },
   "validations": [],

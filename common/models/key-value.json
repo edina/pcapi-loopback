@@ -1,21 +1,17 @@
 {
-  "name": "RecordProperties",
+  "name": "KeyValue",
   "base": "Model",
+  "strict": true,
   "idInjection": false,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "id": false,
-    "editor": {
+    "key": {
       "type": "string",
       "required": true
     },
-    "fields": {
-      "type": "array",
-      "required": true
-    },
-    "timestamp": {
+    "value": {
       "type": "string",
       "required": true
     }
