@@ -11,6 +11,10 @@
       "type": "string",
       "required": true
     },
+    "order":{
+      "type": "number",
+      "required":true
+    },
     "required": {
       "type": "boolean",
       "default": true
