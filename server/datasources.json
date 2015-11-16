@@ -2,5 +2,29 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "DropBox": {
+    "name": "DropBox",
+    "connector": "rest",
+    "operations": [
+      {
+        "template": {
+          "method": "POST",
+          "url": "https://api.dropboxapi.com/2/files/list_folder",
+          "headers": {
+            "Authorization": "Bearer lkeSnP9O7VgAAAAAAAABJzj8alrtwkJAHMtRwGsXP8HLARI59vWxN_tb50oOaLi8",
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "path": "/Apps/Edina Digimap FieldtripGB",
+            "recursive": false
+          },
+          "responsePath": "$.entries[*].name"
+        },
+        "functions": {
+          "find": []
+        }
+      }
+    ]
   }
 }

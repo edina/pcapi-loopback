@@ -91,5 +91,9 @@
   "InputAudio": {
     "dataSource": "db",
     "public": false
+  },
+  "Folder": {
+    "dataSource": "DropBox",
+    "public": true
   }
 }

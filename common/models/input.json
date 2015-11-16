@@ -11,9 +11,9 @@
       "type": "string",
       "required": true
     },
-    "order":{
+    "order": {
       "type": "number",
-      "required":true
+      "required": true
     },
     "required": {
       "type": "boolean",
