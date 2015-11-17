@@ -18,7 +18,7 @@
           "body": {
             "path": "/Apps/Edina Digimap FieldtripGB/records",
             "recursive": false,
-            "include_media_info":false
+            "include_media_info": false
           },
           "responsePath": "$.entries[*].path_lower"
         },
@@ -37,14 +37,24 @@
           "body": {
             "path": "/Apps/Edina Digimap FieldtripGB/records/{id}",
             "recursive": false,
-            "include_media_info":false
+            "include_media_info": false
           },
           "responsePath": "$.entries[*].path_lower"
         },
         "functions": {
-          "findById": ["id"]
+          "findById": [
+            "id"
+          ]
         }
       }
     ]
+  },
+  "MongoDB": {
+    "name": "MongoDB",
+    "connector": "mongodb",
+    "database": "fieldtripGB",
+    "debug": true,
+    "host": "127.0.0.1",
+    "port": 27017
   }
 }
