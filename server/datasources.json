@@ -16,13 +16,33 @@
             "Content-Type": "application/json"
           },
           "body": {
-            "path": "/Apps/Edina Digimap FieldtripGB",
-            "recursive": false
+            "path": "/Apps/Edina Digimap FieldtripGB/records",
+            "recursive": false,
+            "include_media_info":false
           },
-          "responsePath": "$.entries[*].name"
+          "responsePath": "$.entries[*].path_lower"
         },
         "functions": {
           "find": []
+        }
+      },
+      {
+        "template": {
+          "method": "POST",
+          "url": "https://api.dropboxapi.com/2/files/list_folder",
+          "headers": {
+            "Authorization": "Bearer lkeSnP9O7VgAAAAAAAABJzj8alrtwkJAHMtRwGsXP8HLARI59vWxN_tb50oOaLi8",
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "path": "/Apps/Edina Digimap FieldtripGB/records/{id}",
+            "recursive": false,
+            "include_media_info":false
+          },
+          "responsePath": "$.entries[*].path_lower"
+        },
+        "functions": {
+          "findById": ["id"]
         }
       }
     ]
