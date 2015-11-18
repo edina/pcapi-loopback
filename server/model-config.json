@@ -95,5 +95,9 @@
   "Folder": {
     "dataSource": "DropBox",
     "public": true
+  },
+  "Asset": {
+    "dataSource": "mongostorage",
+    "public": true
   }
 }

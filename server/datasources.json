@@ -50,11 +50,24 @@
     ]
   },
   "MongoDB": {
+    "host": "127.0.0.1",
+    "port": 27017,
+    "database": "fieldtripGB",
     "name": "MongoDB",
     "connector": "mongodb",
-    "database": "fieldtripGB",
-    "debug": true,
-    "host": "127.0.0.1",
-    "port": 27017
+    "debug": true
+  },
+  "filestorage": {
+    "name": "filestorage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./server/storage"
+  },
+  "mongostorage":{
+    "name": "mongostorage",
+    "connector": "loopback-component-storage-mongo",
+    "host":"localhost",
+    "port": "27017",
+    "database": "fieldtripGB"
   }
 }
