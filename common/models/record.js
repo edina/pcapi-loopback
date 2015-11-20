@@ -14,6 +14,10 @@ module.exports = function(Record) {
 							if(valid){
 								if(field.type === 'Audio' || field.type === 'Image'){
 									//Search if exists any ObjectId asset with the value of the field.val
+									app.models.Asset.findById(field.val,function(err,file){
+										if(err)	//any db error or file not found
+											next(err);	
+									});
 								}
 							}
 							else{	//Error validating the field instance
@@ -22,8 +26,8 @@ module.exports = function(Record) {
 						});
 					}
 				});
-			}
-			next();
+			}	
+			next(); //Race conditions if any of the ObjectId for Asset does not exist...
 		}
 	});
 };
