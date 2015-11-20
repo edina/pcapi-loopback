@@ -2,6 +2,7 @@
   "name": "pcapi-loopback",
   "version": "1.0.0",
   "main": "server/server.js",
+  "licence": "MIT",
   "scripts": {
     "pretest": "jshint ."
   },
@@ -12,6 +13,7 @@
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^2.1.0",
     "loopback-component-storage": "^1.5.1",
+    "loopback-component-storage-mongo": "^1.0.0",
     "loopback-connector-mongodb": "^1.13.0",
     "loopback-connector-rest": "^1.10.1",
     "loopback-datasource-juggler": "^2.39.0",
