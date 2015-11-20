@@ -63,11 +63,11 @@
     "provider": "filesystem",
     "root": "./server/storage"
   },
-  "mongostorage":{
-    "name": "mongostorage",
-    "connector": "loopback-component-storage-mongo",
-    "host":"localhost",
+  "mongostorage": {
+    "host": "localhost",
     "port": "27017",
-    "database": "fieldtripGB"
+    "database": "fieldtripGB",
+    "name": "mongostorage",
+    "connector": "loopback-component-storage-mongo"
   }
 }

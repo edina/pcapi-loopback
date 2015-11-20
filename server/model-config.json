@@ -92,12 +92,12 @@
     "dataSource": "db",
     "public": false
   },
-  "Folder": {
-    "dataSource": "DropBox",
-    "public": true
-  },
   "Asset": {
     "dataSource": "mongostorage",
     "public": true
+  },
+  "Field": {
+    "dataSource": "db",
+    "public": false
   }
 }
