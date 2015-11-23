@@ -5,6 +5,7 @@ module.exports = function(Record) {
 			var record = ctx.instance;
 			var fields = record.properties.fields;
 			var field = undefined;
+			var finished = 0;
 			for(var i=0;i<fields.length;i++){
 				app.models.Field.create(fields[i],function(err,field){
 					if(err !== null)
@@ -14,9 +15,11 @@ module.exports = function(Record) {
 							if(valid){
 								if(field.type === 'Audio' || field.type === 'Image'){
 									//Search if exists any ObjectId asset with the value of the field.val
-									app.models.Asset.findById(field.val,function(err,file){
+									app.models.Asset.existsId(field.val,function(err,file){
 										if(err)	//any db error or file not found
-											next(err);	
+											next(err);
+										else
+											setFinished();	//If error was not found, update the finished counter	
 									});
 								}
 							}
@@ -26,8 +29,12 @@ module.exports = function(Record) {
 						});
 					}
 				});
+			}
+			function setFinished(){
+				finished++;
+				if(finished === fields.length)
+					next();	//End of the validation before save
 			}	
-			next(); //Race conditions if any of the ObjectId for Asset does not exist...
 		}
 	});
 };
