@@ -2,6 +2,7 @@
   "name": "Editor",
   "plural": "editors",
   "base": "PersistedModel",
+  "strict": true,
   "idInjection": true,
   "options": {
     "validateUpsert": true
@@ -11,61 +12,11 @@
       "type": "string",
       "required": true
     },
-    "text": {
+    "inputs": {
       "type": [
-        "InputText"
+        "object"
       ],
-      "required": false,
-      "default": []
-    },
-    "range": {
-      "type": [
-        "InputRange"
-      ],
-      "required": false,
-      "default": []
-    },
-    "text_area": {
-      "type": [
-        "InputTextArea"
-      ],
-      "required": false,
-      "default": []
-    },
-    "check": {
-      "type": [
-        "InputCheck"
-      ],
-      "required": false,
-      "default": []
-    },
-    "radio": {
-      "type": [
-        "InputRadio"
-      ],
-      "required": false,
-      "default": []
-    },
-    "option": {
-      "type": [
-        "InputOption"
-      ],
-      "required": false,
-      "default": []
-    },
-    "image": {
-      "type": [
-        "InputImage"
-      ],
-      "required": false,
-      "default": []
-    },
-    "audio": {
-      "type": [
-        "InputAudio"
-      ],
-      "required": false,
-      "default": []
+      "required": true
     }
   },
   "validations": [],

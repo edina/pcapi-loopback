@@ -1,5 +1,5 @@
-var app = require('../../server/server'); 
-module.exports = function(Record) {
+ module.exports = function(Record) {
+	var app = require('../../server/server');
 	Record.observe('before save',function(ctx,next){
 		if(ctx.instance !== undefined){	//create(), findOrCreate() or prototype.save()
 			var record = ctx.instance;

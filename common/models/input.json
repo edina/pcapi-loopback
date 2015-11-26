@@ -11,13 +11,13 @@
       "type": "string",
       "required": true
     },
-    "order": {
-      "type": "number",
-      "required": true
-    },
     "required": {
       "type": "boolean",
-      "default": true
+      "required":true
+    },
+    "type": {
+      "type": "string",
+      "required":true
     }
   },
   "validations": [],
