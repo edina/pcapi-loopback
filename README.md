@@ -35,6 +35,11 @@ Not essential but if you want to use some tools from strongloop (Scaffolding, Ar
 npm install -g strongloop
 ```
 
+Before Run
+---
+
+Make sure that mongoDB is up and running. By default the database name is fieldtripGB. If you want to change the name go to server/datasources.json
+and modify the database key under MongoDB entry.
 
 Run
 ---
