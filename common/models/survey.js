@@ -1,6 +1,6 @@
-module.exports = function(Editor) {
+module.exports = function(Survey) {
 	var app = require('../../server/server');
-	Editor.observe('before save',function(ctx,next){
+	Survey.observe('before save',function(ctx,next){
 		if(ctx.instance !== undefined){	//create(), findOrCreate() or prototype.save()
 			var editor = ctx.instance;
 			var inputs = editor.inputs;

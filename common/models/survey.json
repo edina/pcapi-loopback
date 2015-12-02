@@ -1,6 +1,6 @@
 {
-  "name": "Editor",
-  "plural": "editors",
+  "name": "Survey",
+  "plural": "survey",
   "base": "PersistedModel",
   "strict": true,
   "idInjection": true,

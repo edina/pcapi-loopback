@@ -48,7 +48,7 @@
     "dataSource": "db",
     "public": false
   },
-  "Editor": {
+  "Survey": {
     "dataSource": "MongoDB",
     "public": true
   },
