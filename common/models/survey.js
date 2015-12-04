@@ -19,50 +19,63 @@ module.exports = function(Survey) {
 					next(error);	
 				}
 				for(var i=0;i<inputs.length;i++){
-					if(inputs[i].type !== undefined){
-						if(inputs[i].type === 'Text')
-							app.models.InputText.create(inputs[i],callbackCreate);
-						else if(inputs[i].type === 'TextRange')
-							app.models.inputRange.create(inputs[i],callbackCreate);
-						else if(inputs[i].type === 'TextArea')
-							app.models.inputTextArea.create(inputs[i],callbackCreate);
-						else if(inputs[i].type === 'Audio')
-							app.models.inputAudio.create(inputs[i],callbackCreate);
-						else if(inputs[i].type === 'Check')
-							app.models.inputCheck.create(inputs[i],callbackCreate);
-						else if(inputs[i].type === 'Image')
-							app.models.inputImage.create(inputs[i],callbackCreate);
-						else if(inputs[i].type === 'Option')
-							app.models.inputOption.create(inputs[i],callbackCreate);
-						else if(inputs[i].type === 'Radio')
-							app.models.inputRadio.create(inputs[i],callbackCreate);
-						else{
-						error = new Error('Element at position '+i+' does not have a valid value for type property');
-						error.statusCode = 422;
-						next(error);
-						}
-					}
+					if(inputs[i].type !== undefined)
+						create(inputs[i],finished,inputs.length,next);
 					else{
-						error = new Error('Element at position '+i+' does not have type property');
+						error = new Error('Element at position '+i+' does not have '+
+						'type property');
 						error.statusCode = 400;
 						next(error);
 					}
 				}
-		}
-		function setFinished(){
-			finished++;
-			if(finished === inputs.length)
-				next();	//End of the validation before save
 			}
 		}
-		function callbackCreate(err,input){
-			if(err !== null)
-				next(err);
-			else
-				setFinished();
-			}
-		}
+		else
+			next();
 	});
+	function create(input,n1,n2,callback){
+		if(input.type === 'Text')
+			app.models.InputText.create(input,
+			function(err,input){callbackCreate(err,input,n1,n2,callback);});
+		else if(input.type === 'TextRange')
+			app.models.InputRange.create(input,
+			function(err,input){callbackCreate(err,input,n1,n2,callback);});
+		else if(input.type === 'TextArea')
+			app.models.InputTextArea.create(input,
+			function(err,input){callbackCreate(err,input,n1,n2,callback);});
+		else if(input.type === 'Audio')
+			app.models.InputAudio.create(input,
+			function(err,input){callbackCreate(err,input,n1,n2,callback);});
+		else if(input.type === 'Check')
+			app.models.InputCheck.create(input,
+			function(err,input){callbackCreate(err,input,n1,n2,callback);});
+		else if(input.type === 'Image')
+			app.models.InputImage.create(input,
+			function(err,input){callbackCreate(err,input,n1,n2,callback);});
+		else if(input.type === 'Option')
+			app.models.InputOption.create(input,
+			function(err,input){callbackCreate(err,input,n1,n2,callback);});
+		else if(input.type === 'Radio')
+			app.models.InputRadio.create(input,
+			function(err,input){callbackCreate(err,input,n1,n2,callback);});
+		else{
+			var error = new Error('At least one input does not have '+
+			'a valid value for type property');
+			error.statusCode = 422;
+			callback(error);
+		}
+	}
+	function callbackCreate(err,input,n1,n2,callback){
+			if(err !== null)
+				callback(err);
+			else{
+				n1++;
+				isDone(n1,n2,callback);
+			}
+	}
+	function isDone(n1,n2,callback){
+ 		if(n1 === n2) callback();
+ 	}
 };
 /*
 1. Investigate when client sends inputs as non-array because loopback 

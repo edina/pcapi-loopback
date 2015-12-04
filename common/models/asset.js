@@ -1,3 +1,4 @@
+'use strict';
 module.exports = function(Asset) {
 	var DataSource = require('loopback-datasource-juggler').DataSource;
 	var storageMongo = new DataSource({
